@@ -1,0 +1,98 @@
+
+/*
+browser-sync start --server --files "**"
+*/
+
+html {
+    box-sizing: border-box;
+    height: 100%;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body {
+    font: 16px/24px helvetica,arial,sans-serif;
+    color: #333;
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+fieldset {
+    border-color: #ddd;
+    border-radius: 4px;
+}
+
+legend {
+    font-size: 1.5rem;
+    color: #bbb;
+}
+
+label span {
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+}
+
+input {
+    width: 200px;
+    padding-left: 5px;
+    margin-right: 5px;
+    border: 1px solid #bbb;
+    border-radius: 2px;
+}
+
+input[type="checkbox"] {
+    width: 20px;
+}
+
+.submit {
+    width: 200px;
+    margin-left: 105px;
+    margin-top: 15px;
+    padding: 0px 10px;
+    text-transform: uppercase;
+    color: #777;
+    background: #eee;
+    cursor: pointer;
+}
+
+::-webkit-input-placeholder {
+    color: #777;
+}
+
+::-moz-placeholder {
+    color: #777;
+}
+
+:-ms-input-placeholder {
+    color: #777;
+}
+
+::placeholder {
+    color: #777;
+}
+
+label.error {
+    font-size: 0.9rem;
+    color: red;
+    opacity: 0.6;
+}
+input.error {
+    border-color: red;
+    opacity: 0.6;
+}
+
+.status {
+    position: fixed;
+    top: 40%;
+    left: 77%;
+    text-align: center;
+    font-size: 1.5rem;
+    color: #777;
+}
