@@ -10,16 +10,30 @@
 	<body>
 
 		<div class="container">
+				<div class="map">
+
+				</div>
+
 				<form>
 					<fieldset>
-						<legend>Submit</legend>
+						<legend>Set a marker</legend>
 						<p>
-							<label><span>:</span>
-								<input type="text" name="" placeholder="e.g:" required>
+							<label><span>Latitude:</span>
+								<input type="text" name="latitude" placeholder="e.g: latitude" required>
 							</label>
 						</p>
 						<p>
-							<input class="submit" type="submit" name="submit" value="submit new">
+							<label><span>Longitude:</span>
+								<input type="text" name="longitude" placeholder="e.g: longitude" required>
+							</label>
+						</p>
+						<p>
+							<label><span>Message:</span>
+								<input type="text" name="messages" placeholder="e.g: some messages" required>
+							</label>
+						</p>
+						<p>
+							<input class="submit" type="submit" name="submit" value="Set Marker">
 						</p>
 					</fieldset>
 				</form>
