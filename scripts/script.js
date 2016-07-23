@@ -1,32 +1,37 @@
 
 $(function() {
 
+	$(".submit").on("click", addMarker);
+	$(".submit").on("submit", function(event) {
+		event.preventDefault();
+	});
+
 	const $form = $("form");
 	$form.validate({
 		rules: {
-
+			latitude: {
+				number: true
+			},
+			longitude: {
+				number: true
+			}
 		},
 
 		messages: {
+			latitude: {
+				required: "Please provide valid latitude"
+			},
+			longitude: {
+				required: "Please provide valid longitude"
+			},
+			messages: {
+				required: "Please provide some messages"
+			}
 
 		},
 
 		submitHandler: function() {
-			$status.text("Loading hard...").fadeIn(1000);
-			$.ajax({
-				type: "POST",
-				url: "",
-				data: $form.serializeArray(),
-				dataType: json
-			})
-				.done(function(data, textStatus, jqXHR) {
-					$status.text("Thanks, submit successfully");
-				})
-				.fail(function(jqXHR, textStatus, errorThrown) {
-					$status.text("Sorry, there's a error");
-				});
-
-			return false;
+			console.log("Where's this location?")
 		}
 	});
 
@@ -41,9 +46,27 @@ $(function() {
 
 	let map;
 	function initMap() {
+		const latLng = { lat: 30.2741, lng: 120.1551 };
 		map = new google.maps.Map($(".map")[0], {
-			center: {lat: 30.2741, lng: 120.1551},
-			zoom: 8
+			center: latLng,
+			zoom: 10
+		});
+
+		let marker = new google.maps.Marker({
+			position: latLng,
+			map: map,
+			title: "Wonderful"
 		});
 	}
 
+	function addMarker(event) {
+		const lat = $(".latitude").val();
+		const lng = $(".longitude").val();
+		const messages = $(".messages").val();
+		const location = new google.maps.LatLng(lat, lng);
+		const marker = new google.maps.Marker({
+			position: location,
+			map: map,
+			title: messages
+		});
+	}
