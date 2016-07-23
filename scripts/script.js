@@ -1,19 +1,19 @@
 
 $(function() {
 
-	$(".submit").on("click", addMarker);
 	$(".submit").on("submit", function(event) {
 		event.preventDefault();
 	});
+	$(".submit").on("click", addMarker);
 
 	const $form = $("form");
 	$form.validate({
 		rules: {
 			latitude: {
-				number: true
+				range: [-90, 90]
 			},
 			longitude: {
-				number: true
+				range: [-180, 180]
 			}
 		},
 
@@ -23,11 +23,7 @@ $(function() {
 			},
 			longitude: {
 				required: "Please provide valid longitude"
-			},
-			messages: {
-				required: "Please provide some messages"
 			}
-
 		},
 
 		submitHandler: function() {

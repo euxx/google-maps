@@ -39,7 +39,7 @@ body {
 }
 
 form {
-    width: 600px;
+    width: 770px;
     margin: 0 auto;
 }
 
@@ -55,7 +55,7 @@ legend {
 
 label span {
     display: inline-block;
-    width: 100px;
+    width: 155px;
     text-align: right;
 }
 
@@ -73,7 +73,7 @@ input[type="checkbox"] {
 
 .submit {
     width: 200px;
-    margin-left: 105px;
+    margin-left: 160px;
     margin-top: 15px;
     padding: 0px 10px;
     text-transform: uppercase;
