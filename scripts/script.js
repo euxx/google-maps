@@ -54,6 +54,7 @@ $(function() {
 
 		let marker = new google.maps.Marker({
 			position: latLng,
+			draggable: true,
 			map: map,
 			title: "Wonderful"
 		});
@@ -66,7 +67,9 @@ $(function() {
 		const location = new google.maps.LatLng(lat, lng);
 		const marker = new google.maps.Marker({
 			position: location,
+			draggable: true,
 			map: map,
-			title: messages
+			title: messages,
+			animation: google.maps.Animation.DROP
 		});
 	}
